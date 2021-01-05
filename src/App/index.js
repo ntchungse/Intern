@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './layouts/Header'
 import Banner from './layouts/Banner'
+import Voucer from './layouts/Voucher'
 import Voucher from './layouts/Voucher';
-import Images from './layouts/Images';
 
 function HomePage() {
   return (
@@ -11,7 +11,6 @@ function HomePage() {
       <Header />
       <Banner />
       <Voucher />
-      <Images />
     </div>
   );
 }
