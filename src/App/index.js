@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Header from './layouts/Header'
+import MainContent from './layouts/MainContent'
 
 function HomePage() {
   return (
     <div className="home">
-      <h1>Home Page</h1>
+      <Header />
+      <MainContent />
     </div>
   );
 }
