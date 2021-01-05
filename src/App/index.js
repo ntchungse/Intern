@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './layouts/Header'
-import MainContent from './layouts/MainContent'
+import Banner from './layouts/Banner'
 
 function HomePage() {
   return (
     <div className="home">
       <Header />
-      <MainContent />
+      <Banner />
     </div>
   );
 }

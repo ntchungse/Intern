@@ -9,7 +9,7 @@ import NavMenuIcon from "../../assets/icons/nav-menu.png";
 import { Container, Row} from "reactstrap";
 
 function Header() {
-  const [open, isOpen] = useState(false);
+  const [open, isOpen] = useState(true);
   const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
