@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
 import Logo from "../../assets/images/logo.png";
 import SearchIcon from "../../assets/icons/search.png";
@@ -6,19 +6,39 @@ import CartIcon from "../../assets/icons/shopping-cart.png";
 import DropdownArrow from "../../assets/icons/dropdown-arrow.png";
 import NavMenuIcon from "../../assets/icons/nav-menu.png";
 
-import { Container, Row,Col } from "reactstrap";
+import { Container, Row} from "reactstrap";
 
 function Header() {
+  const [open, isOpen] = useState(false);
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWidth(window.innerWidth);
+      resize();
+    }
+    window.addEventListener('resize', handleWindowResize);
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, [width])
+
+  const resize = () => {
+    if(width <= 991.98){
+      isOpen(false);
+    }
+    else{
+      isOpen(true)
+    }
+  }
+  const toggle = () => isOpen(!open);
 
   return (
     <div className="header">
       <Container>
         <Row className="header__row">
-          <Col xl="2" className=" header__logo">
+          <div className=" header__logo">
             <img src={Logo} alt="Logo" />
-          </Col>
-          <Col xl="8">
-          <nav className="header__nav">
+          </div>
+          <nav className="header__nav" style={{display: open ? 'block': 'none'}}>
             <ul className="header__nav-list">
               <li className="header__nav-item">
                 <a className="header__nav-link" href="#">
@@ -35,8 +55,9 @@ function Header() {
                   Sản phẩm
                   <img src={DropdownArrow} alt="dropdown arrow" />
                 </a>
+                <div className="header__nav-link-overlay"></div>
                 <div className="dropdown">
-                  <div class="arrow-up"></div>
+                  <div className="arrow-up"></div>
                   <div className="dropdown__content">
                     <ul className="dropdown__list">
                       <p>Dưỡng da</p>
@@ -187,14 +208,11 @@ function Header() {
               </li>
             </ul>
           </nav>
-          </Col>
-          <Col xl="2">
           <div className="header__icon">
             <img src={CartIcon} alt="cart icon" />
             <img src={SearchIcon} alt="search icon" />
-            <img src={NavMenuIcon} alt="navbar icon"/>
+            <img src={NavMenuIcon} alt="navbar icon" onClick={toggle}/>
           </div>
-          </Col>
         </Row>
       </Container>
     </div>

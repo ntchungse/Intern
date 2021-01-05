@@ -7,7 +7,7 @@ function MainContent() {
     <div className="mainContent">
       <Container>
         <div className="content">
-          <h2 class="main__heading">Green Vera</h2>
+          <h2 className="main__heading">Green Vera</h2>
           <p className="content__desc">
             Sản phẩm tinh dầu dưỡng da mới nhất của mandala
           </p>
