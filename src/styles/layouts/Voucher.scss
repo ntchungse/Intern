@@ -1,0 +1,63 @@
+.voucher {
+  @include flex(row, space-between, center);
+  margin: 3rem auto;
+  &__detail {
+    flex: 0 0 33.33333%;
+    max-width: 33.33%;
+    @include flex(column, center, center);
+    .voucher__detail-icon {
+      margin-bottom: 1rem;
+    }
+    .voucher__detail-desc {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  }
+  &__detail:nth-child(2) {
+    border-left: 1px solid $color-black-light-2;
+    border-right: 1px solid $color-black-light-2;
+  }
+}
+@include media-breakpoint-down(md) {
+  .voucher {
+    .voucher__detail {
+      .voucher__detail-icon {
+        transform: scale(0.8);
+        margin-bottom: 1rem;
+      }
+      .voucher__detail-desc {
+        font-size: 1rem;
+        text-align: center;
+        font-weight: bold;
+      }
+    }
+  }
+}
+@include media-breakpoint-down(xs) {
+  .voucher {
+    @include flex(column, space-between, center);
+    .voucher__detail {
+      flex: 1;
+      min-width: 100%;
+      @include flex(row, center, center);
+      margin: .5rem auto;
+      .voucher__detail-icon {
+        margin-bottom: 1rem;
+      }
+      .voucher__detail-desc {
+        flex: 0.6;
+        margin-left: 1rem;
+        line-height: 2;
+        text-align: start;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+    }
+    .voucher__detail:nth-child(2) {
+      border-top: 1px solid $color-black-light-2;
+      border-bottom: 1px solid $color-black-light-2;
+      border-left: none;
+      border-right: none;
+    }
+  }
+}
