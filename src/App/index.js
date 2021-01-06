@@ -4,6 +4,7 @@ import Header from './layouts/Header'
 import Banner from './layouts/Banner'
 import Voucher from './layouts/Voucher';
 import Images from './layouts/Images';
+import SilderQuote from './layouts/SilderQuote';
 
 function HomePage() {
   return (
@@ -12,6 +13,7 @@ function HomePage() {
       <Banner />
       <Voucher />
       <Images />
+      <SilderQuote />
     </div>
   );
 }

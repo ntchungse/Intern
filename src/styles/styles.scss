@@ -3,7 +3,11 @@
 @import "helpers/variables";
 @import "helpers/mixins";
 
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
+
 @import "./layouts/Header";
 @import './layouts/Banner';
 @import './layouts/Voucher';
 @import './layouts/Images';
+@import './layouts/SliderQuote';
