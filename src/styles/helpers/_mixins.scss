@@ -5,6 +5,10 @@
     box-shadow: $top $left $blur $color;
   }
 }
+@mixin flex-width($percent) {
+  flex: 0 0 $percent;
+  max-width: $percent;
+}
 
 @mixin button($bgcolor: null, $color: null, $mw: null, $boxshadow: null) {
   border: 0;

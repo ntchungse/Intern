@@ -8,6 +8,7 @@ import SilderQuote from './layouts/SilderQuote';
 import SliderProduct from './layouts/SliderProduct';
 import SocialList from './layouts/SocialList';
 import AboutMe from './layouts/AboutMe';
+import Footer from './layouts/Footer';
 
 function HomePage() {
   return (
@@ -20,6 +21,7 @@ function HomePage() {
       <SliderProduct />
       <SocialList />
       <AboutMe />
+      <Footer/>
     </div>
   );
 }

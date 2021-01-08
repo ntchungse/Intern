@@ -1,7 +1,4 @@
-@mixin flex-width($percent) {
-  flex: 0 0 $percent;
-  max-width: $percent;
-}
+
 .heading {
   text-align: center;
   margin-bottom: 0.7rem;
