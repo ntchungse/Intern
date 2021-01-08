@@ -211,7 +211,7 @@ function Header() {
           <div className="header__icon">
             <img src={CartIcon} alt="cart icon" />
             <img src={SearchIcon} alt="search icon" />
-            <img src={NavMenuIcon} alt="navbar icon" onClick={toggle}/>
+            <img src={NavMenuIcon} alt="navbar icon" onClick={toggle} style={{ display: width > 992 ? "none" : "block"}}/>
           </div>
         </Row>
       </Container>

@@ -82,7 +82,7 @@
             @include absolute($top: -1.6rem, $right: 40%);
           }
           .dropdown__content {
-            @include flex(row, space-between, center);
+            @include flex(row, space-between, baseline);
             .dropdown__list {
               @include flex(column, center, flex-start);
               padding: 0 1rem;
@@ -158,7 +158,7 @@
               border-left: 10px solid transparent;
               border-right: 10px solid transparent;
               border-bottom: 10px solid var(--green);
-              @include absolute($top: -5%, $left: 8%);
+              @include absolute($top: -4%, $left: 8%);
             }
             .dropdown__content {
               .dropdown__list {
@@ -185,6 +185,9 @@
       .header__nav-list {
         .header__nav-item {
           .dropdown {
+            .arrow-up {
+              top: -3%;
+            }
             .dropdown__content {
               .dropdown__list {
                 p {
