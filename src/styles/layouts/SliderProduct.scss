@@ -118,7 +118,10 @@
   }
   .product {
     outline: none;
-    @include flex(column, center, center);
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     img {
       border-bottom: 1px dashed $color-black-light;
     }
@@ -157,19 +160,17 @@
       }
     }
     .product__action {
-      @include flex(row, center, stretch);
       @mixin customize_action($isButton: null) {
         @if $isButton == true {
-          flex: 0 0 60%;
+          flex: 0 0 50%;
           max-width: 60%;
         } @else {
-          flex: 0 0 20%;
-          max-width: 20%;
+          flex: 0 0 25%;
+          max-width: 25%;
         }
         background-color: transparent;
         border: 2px solid $color-black-light-2;
         border-radius: 15px;
-        padding: 0.5rem;
         margin: 0 0.2rem;
         &:hover {
           color: $color-text-banner;
@@ -177,7 +178,8 @@
           fill: $color-text-banner;
         }
       }
-      width: 60%;
+      @include flex(row, center, stretch);
+      width: 50%;
       margin: 0 auto;
       visibility: hidden;
       opacity: 0;
@@ -255,6 +257,7 @@
         }
       }
       .product__action {
+        align-items: center;
         .product__action-add {
           font-size: 1rem;
         }
