@@ -6,6 +6,7 @@ import Voucher from './layouts/Voucher';
 import Images from './layouts/Images';
 import SilderQuote from './layouts/SilderQuote';
 import SliderProduct from './layouts/SliderProduct';
+import SocialList from './layouts/SocialList';
 
 function HomePage() {
   return (
@@ -16,6 +17,7 @@ function HomePage() {
       <Images />
       <SilderQuote />
       <SliderProduct />
+      <SocialList />
     </div>
   );
 }
