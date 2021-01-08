@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import App from '../src/App/index';
 import reportWebVitals from './reportWebVitals';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/reset.scss'
 import './styles/styles.scss'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 ReactDOM.render(
