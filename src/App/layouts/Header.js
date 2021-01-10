@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 
 import Logo from "../../assets/images/logo.png";
 import SearchIcon from "../../assets/icons/search.png";
@@ -6,9 +6,9 @@ import CartIcon from "../../assets/icons/shopping-cart.png";
 import DropdownArrow from "../../assets/icons/dropdown-arrow.png";
 import NavMenuIcon from "../../assets/icons/nav-menu.png";
 
-import { Container, Row} from "reactstrap";
+import { Container, Row } from "reactstrap";
 
-function Header() {
+function Header({ openCart }) {
   const [open, isOpen] = useState(true);
   const [width, setWidth] = useState(window.innerWidth);
 
@@ -16,19 +16,18 @@ function Header() {
     const handleWindowResize = () => {
       setWidth(window.innerWidth);
       resize();
-    }
-    window.addEventListener('resize', handleWindowResize);
+    };
+    window.addEventListener("resize", handleWindowResize);
     return () => window.removeEventListener("resize", handleWindowResize);
-  }, [width])
+  }, [width]);
 
   const resize = () => {
-    if(width <= 991.98){
+    if (width <= 991.98) {
       isOpen(false);
+    } else {
+      isOpen(true);
     }
-    else{
-      isOpen(true)
-    }
-  }
+  };
   const toggle = () => isOpen(!open);
 
   return (
@@ -38,7 +37,10 @@ function Header() {
           <div className=" header__logo">
             <img src={Logo} alt="Logo" />
           </div>
-          <nav className="header__nav" style={{display: open ? 'block': 'none'}}>
+          <nav
+            className="header__nav"
+            style={{ display: open ? "block" : "none" }}
+          >
             <ul className="header__nav-list">
               <li className="header__nav-item">
                 <a className="header__nav-link" href="#">
@@ -209,9 +211,14 @@ function Header() {
             </ul>
           </nav>
           <div className="header__icon">
-            <img src={CartIcon} alt="cart icon" />
+            <img src={CartIcon} alt="cart icon" onClick={openCart} />
             <img src={SearchIcon} alt="search icon" />
-            <img src={NavMenuIcon} alt="navbar icon" onClick={toggle} style={{ display: width > 992 ? "none" : "block"}}/>
+            <img
+              src={NavMenuIcon}
+              alt="navbar icon"
+              onClick={toggle}
+              style={{ display: width > 992 ? "none" : "block" }}
+            />
           </div>
         </Row>
       </Container>

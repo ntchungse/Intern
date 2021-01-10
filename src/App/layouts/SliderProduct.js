@@ -3,13 +3,6 @@ import React from "react";
 import Slider from "react-slick";
 import { Container } from "reactstrap";
 
-import Product1 from "../../assets/images/product_1.jpg";
-import Product2 from "../../assets/images/product_2.jpg";
-import Product3 from "../../assets/images/product_3.jpg";
-import Product4 from "../../assets/images/product_4.jpg";
-import Product5 from "../../assets/images/product_5.jpg";
-import Product6 from "../../assets/images/product_6.jpg";
-import Product8 from "../../assets/images/product_8.png";
 import { ReactComponent as HeartIcon } from "../../assets/icons/heart.svg";
 import { ReactComponent as Recycle } from "../../assets/icons/recycle.svg";
 
@@ -34,7 +27,7 @@ function SamplePrevArrow(props) {
   );
 }
 
-function SliderProduct() {
+function SliderProduct({ product, addToCart }) {
   const settings = {
     className: "center",
     centerMode: true,
@@ -136,146 +129,33 @@ function SliderProduct() {
       <div className="product__slider">
         <div>
           <Slider {...settings}>
-            <div className="product" style={{ width: "30rem" }}>
-              <img src={Product1} />
-              <div className="product__content">
-                <p className="product__content-name">DEBORA</p>
-                <p className="product__content-desc">Mỹ phẩm Châu Âu</p>
-                <p className="product__content-price">
-                  <span>355.000 </span> <span className="currency">đ</span>{" "}
-                  450.000<span className="currency">đ</span>
-                </p>
+            {product.map((product) => (
+              <div
+                className="product"
+                key={product._id}
+                style={{ width: "30rem" }}
+              >
+                <img src={product.imagePath.default} />
+                <div className="product__content">
+                  <p className="product__content-name">{product.name}</p>
+                  <p className="product__content-desc">{product.desc}</p>
+                  <p className="product__content-price">
+                    <span>{product.price[0]} </span>{" "}
+                    <span className="currency">đ</span> {product.price[1]}
+                    <span className="currency">đ</span>
+                  </p>
+                </div>
+                <div className="product__action">
+                  <button className="product__action-add" onClick={() => addToCart(product)}>Mua hàng</button>
+                  <button className="product__action-like">
+                    <HeartIcon />
+                  </button>
+                  <button className="product__action-recycle">
+                    <Recycle />
+                  </button>
+                </div>
               </div>
-              <div className="product__action">
-                <button className="product__action-add">Mua hàng</button>
-                <button className="product__action-like">
-                  <HeartIcon />
-                </button>
-                <button className="product__action-recycle">
-                  <Recycle />
-                </button>
-              </div>
-            </div>
-            <div className="product" style={{ width: "30rem" }}>
-              <img src={Product2} />
-              <div className="product__content">
-                <p className="product__content-name">DEBORA</p>
-                <p className="product__content-desc">Mỹ phẩm Châu Âu</p>
-                <p className="product__content-price">
-                  <span>355.000 </span> <span className="currency">đ</span>{" "}
-                  450.000<span className="currency">đ</span>
-                </p>
-              </div>
-              <div className="product__action">
-                <button className="product__action-add">Mua hàng</button>
-                <button className="product__action-like">
-                  <HeartIcon />
-                </button>
-                <button className="product__action-recycle">
-                  <Recycle />
-                </button>
-              </div>
-            </div>
-            <div className="product" style={{ width: "30rem" }}>
-              <img src={Product3} />
-              <div className="product__content">
-                <p className="product__content-name">DEBORA</p>
-                <p className="product__content-desc">Mỹ phẩm Châu Âu</p>
-                <p className="product__content-price">
-                  <span>355.000 </span> <span className="currency">đ</span>{" "}
-                  450.000<span className="currency">đ</span>
-                </p>
-              </div>
-              <div className="product__action">
-                <button className="product__action-add">Mua hàng</button>
-                <button className="product__action-like">
-                  <HeartIcon />
-                </button>
-                <button className="product__action-recycle">
-                  <Recycle />
-                </button>
-              </div>
-            </div>
-            <div className="product" style={{ width: "30rem" }}>
-              <img src={Product4} />
-              <div className="product__content">
-                <p className="product__content-name">DEBORA</p>
-                <p className="product__content-desc">Mỹ phẩm Châu Âu</p>
-                <p className="product__content-price">
-                  <span>355.000 </span> <span className="currency">đ</span>{" "}
-                  450.000<span className="currency">đ</span>
-                </p>
-              </div>
-              <div className="product__action">
-                <button className="product__action-add">Mua hàng</button>
-                <button className="product__action-like">
-                  <HeartIcon />
-                </button>
-                <button className="product__action-recycle">
-                  <Recycle />
-                </button>
-              </div>
-            </div>
-            <div className="product" style={{ width: "30rem" }}>
-              <img src={Product5} />
-              <div className="product__content">
-                <p className="product__content-name">DEBORA</p>
-                <p className="product__content-desc">Mỹ phẩm Châu Âu</p>
-                <p className="product__content-price">
-                  <span>355.000 </span> <span className="currency">đ</span>{" "}
-                  450.000<span className="currency">đ</span>
-                </p>
-              </div>
-              <div className="product__action">
-                <button className="product__action-add">Mua hàng</button>
-                <button className="product__action-like">
-                  <HeartIcon />
-                </button>
-                <button className="product__action-recycle">
-                  <Recycle />
-                </button>
-              </div>
-            </div>
-            <div className="product" style={{ width: "30rem" }}>
-              <img src={Product6} />
-              <div className="product__content">
-                <p className="product__content-name">DEBORA</p>
-                <p className="product__content-desc">Mỹ phẩm Châu Âu</p>
-                <p className="product__content-price">
-                  <span>355.000 </span> <span className="currency">đ</span>{" "}
-                  450.000<span className="currency">đ</span>
-                </p>
-              </div>
-              <div className="product__action">
-                <button className="product__action-add">Mua hàng</button>
-                <button className="product__action-like">
-                  <HeartIcon />
-                </button>
-                <button className="product__action-recycle">
-                  <Recycle />
-                </button>
-              </div>
-            </div>
-            <div className="product" style={{ width: "30rem" }}>
-              <img src={Product8} />
-              <div className="product__content">
-                <p className="product__content-name">DEBORA</p>
-                <p className="product__content-desc">Mỹ phẩm Châu Âu</p>
-                <p className="product__content-price">
-                  <span>355.000 </span> <span className="currency">đ</span>{" "}
-                  450.000<span className="currency">đ</span>
-                </p>
-              </div>
-              <div className="product__action">
-                <button className="product__action-add">Mua hàng</button>
-                <button className="product__action-like">
-                  <HeartIcon />
-                </button>
-                <button className="product__action-recycle">
-                  <Recycle />
-                </button>
-              </div>
-            </div>
+            ))}
           </Slider>
         </div>
       </div>
