@@ -21,9 +21,6 @@ function HomePage() {
   const handleOpenCart = () => {
     setOpenCart(true);
   };
-  const handleCloseCart = () => {
-    setOpenCart(false);
-  };
   const handleAddToCart = (product) => {
     let cart = localStorage.getItem("cart")
       ? JSON.parse(localStorage.getItem("cart"))
@@ -42,8 +39,7 @@ function HomePage() {
   };
   return (
     <div className="home">
-      <Header openCart={handleOpenCart} />
-      {openCart && <Cart closeCart={handleCloseCart} />}
+      <Header />
       <Banner />
       <Voucher />
       <Images />

@@ -110,7 +110,7 @@
   .header__icon {
     @include flex(row, space-around);
     flex-grow: 0.1;
-    img {
+    .icon-img {
       width: 1.5rem;
       cursor: pointer;
     }

@@ -6,11 +6,13 @@ import CartIcon from "../../assets/icons/shopping-cart.png";
 import DropdownArrow from "../../assets/icons/dropdown-arrow.png";
 import NavMenuIcon from "../../assets/icons/nav-menu.png";
 
+import Cart from "../layouts/Cart";
 import { Container, Row } from "reactstrap";
 
-function Header({ openCart }) {
+function Header() {
   const [open, isOpen] = useState(true);
   const [width, setWidth] = useState(window.innerWidth);
+  const [openCart, setOpenCart] = useState(false);
 
   useEffect(() => {
     const handleWindowResize = () => {
@@ -211,9 +213,16 @@ function Header({ openCart }) {
             </ul>
           </nav>
           <div className="header__icon">
-            <img src={CartIcon} alt="cart icon" onClick={openCart} />
-            <img src={SearchIcon} alt="search icon" />
             <img
+              src={CartIcon}
+              className="icon-img"
+              alt="cart icon"
+              onClick={() => setOpenCart(true)}
+            />
+            {openCart && <Cart closeCart={() => setOpenCart(false)} />}
+            <img src={SearchIcon} className="icon-img" alt="search icon" />
+            <img
+              className="icon-img"
               src={NavMenuIcon}
               alt="navbar icon"
               onClick={toggle}
