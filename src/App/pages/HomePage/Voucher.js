@@ -1,9 +1,9 @@
 import React from 'react'
 import { Container } from 'reactstrap';
 
-import { ReactComponent as Plane} from "../../assets/icons/plane.svg"
-import { ReactComponent as Gift} from "../../assets/icons/gift.svg"
-import { ReactComponent as Star} from "../../assets/icons/star.svg"
+import { ReactComponent as Plane} from "../../../assets/icons/plane.svg"
+import { ReactComponent as Gift} from "../../../assets/icons/gift.svg"
+import { ReactComponent as Star} from "../../../assets/icons/star.svg"
 
 
 function Voucher() {

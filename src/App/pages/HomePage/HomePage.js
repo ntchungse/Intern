@@ -1,26 +1,18 @@
-import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
+import React, { useState } from "react";
 
-import Header from "./layouts/Header";
-import Banner from "./layouts/Banner";
-import Voucher from "./layouts/Voucher";
-import Images from "./layouts/Images";
-import SilderQuote from "./layouts/SilderQuote";
-import SliderProduct from "./layouts/SliderProduct";
-import SocialList from "./layouts/SocialList";
-import AboutMe from "./layouts/AboutMe";
-import Footer from "./layouts/Footer";
-import Cart from "./layouts/Cart";
-import { DataProduct } from "../DataProduct";
+import Banner from "../HomePage/Banner";
+import Voucher from "../HomePage/Voucher";
+import Images from "../HomePage/Images";
+import SilderQuote from "../HomePage/SilderQuote";
+import SliderProduct from "../HomePage/SliderProduct";
+import SocialList from "../HomePage/SocialList";
+import AboutMe from "../HomePage/AboutMe";
+import { DataProduct } from "../../../DataProduct";
 
 function HomePage() {
   const [data, setData] = useState({
     products: DataProduct,
   });
-  const [openCart, setOpenCart] = useState(false);
-  const handleOpenCart = () => {
-    setOpenCart(true);
-  };
   const handleAddToCart = (product) => {
     let cart = localStorage.getItem("cart")
       ? JSON.parse(localStorage.getItem("cart"))
@@ -39,7 +31,6 @@ function HomePage() {
   };
   return (
     <div className="home">
-      <Header />
       <Banner />
       <Voucher />
       <Images />
@@ -47,7 +38,6 @@ function HomePage() {
       <SliderProduct product={data.products} addToCart={handleAddToCart} />
       <SocialList />
       <AboutMe />
-      <Footer />
     </div>
   );
 }

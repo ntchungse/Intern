@@ -2,8 +2,8 @@ import React from "react";
 
 import Slider from "react-slick";
 import { Container } from "reactstrap";
-import Woman from "../../assets/images/feedback_woman.png";
-import Man from "../../assets/images/feedback_man.png";
+import Woman from "../../../assets/images/feedback_woman.png";
+import Man from "../../../assets/images/feedback_man.png";
 
 function SilderQuote() {
   const settings = {

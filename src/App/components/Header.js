@@ -6,8 +6,9 @@ import CartIcon from "../../assets/icons/shopping-cart.png";
 import DropdownArrow from "../../assets/icons/dropdown-arrow.png";
 import NavMenuIcon from "../../assets/icons/nav-menu.png";
 
-import Cart from "../layouts/Cart";
+import Cart from "./Cart";
 import { Container, Row } from "reactstrap";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [open, isOpen] = useState(true);
@@ -45,14 +46,14 @@ function Header() {
           >
             <ul className="header__nav-list">
               <li className="header__nav-item">
-                <a className="header__nav-link" href="#">
+                <Link className="header__nav-link" to="/">
                   Trang Chủ
-                </a>
+                </Link>
               </li>
               <li className="header__nav-item">
-                <a className="header__nav-link" href="#">
+                <Link className="header__nav-link" to="/about">
                   Giới thiệu
-                </a>
+                </Link>
               </li>
               <li className="header__nav-item">
                 <a className="header__nav-link" href="#">

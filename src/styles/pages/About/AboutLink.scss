@@ -1,0 +1,23 @@
+.aboutLink {
+    .aboutLink__list {
+        @include flex(row, flex-start);
+        border-bottom: 1px dashed $color-black-light;
+        .aboutLink__item {
+            padding: 1rem .5rem;
+            .aboutLink__link {
+                font-size: 1.3rem;
+                font-weight: 500;
+                color: $color-black-light-1;      
+            }
+            .aboutLink__link--active{
+                color: $color-text-banner;
+            }
+        }
+        .aboutLink__item:not(:last-child)::after{
+            content: ">";
+            color: $color-black-light-1;
+            margin-left: .5rem;
+            font-size: 1.3rem;
+        }
+    }
+}

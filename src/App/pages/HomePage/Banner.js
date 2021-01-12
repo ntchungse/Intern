@@ -2,8 +2,8 @@ import React from "react";
 
 import { Container} from "reactstrap";
 
-import Woman from "../../assets/images/woman.png";
-import Product from "../../assets/images/product-banner.png";
+import Woman from "../../../assets/images/woman.png";
+import Product from "../../../assets/images/product-banner.png";
 
 function Banner() {
   return (

@@ -1,8 +1,8 @@
 import React from "react";
 import {Container} from "reactstrap";
 
-import Logo from "../../assets/images/logo.png";
-import BlogImage from "../../assets/images/blog_2.png";
+import Logo from "../../../assets/images/logo.png";
+import BlogImage from "../../../assets/images/blog_2.png";
 
 function AboutMe() {
   return (

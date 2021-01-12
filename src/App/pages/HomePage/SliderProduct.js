@@ -3,8 +3,8 @@ import React from "react";
 import Slider from "react-slick";
 import { Container } from "reactstrap";
 
-import { ReactComponent as HeartIcon } from "../../assets/icons/heart.svg";
-import { ReactComponent as Recycle } from "../../assets/icons/recycle.svg";
+import { ReactComponent as HeartIcon } from "../../../assets/icons/heart.svg";
+import { ReactComponent as Recycle } from "../../../assets/icons/recycle.svg";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;

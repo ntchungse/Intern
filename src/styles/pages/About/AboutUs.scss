@@ -1,0 +1,55 @@
+.aboutUs {
+    margin-top: 1.5rem;
+    margin-bottom: 5rem;
+    .aboutUs__heading {
+        font-size: 2.5rem;
+        font-weight: 400;
+        margin-bottom: 1rem;
+    }
+    .aboutUs__content {
+        @include flex(row,space-between);
+        .content__img{
+            flex: 0 0 50%;
+            max-width: 50%;
+            margin-right: 1rem;
+            img {
+                width: 100%;
+            }
+            
+        }
+        .content__desc {
+            flex: 0 0 50%;
+            max-width: 50%;
+            margin-left: 1rem;
+            img {
+                margin: 2rem 0;
+            }
+            .title {
+                font-size: 1.8rem;
+                font-weight: 500;
+            }
+            .desc {
+                font-size: 1.3rem;
+            }
+            .link {
+                font-size: 1.3rem;
+                color: $color-black-light-2;
+            }
+        }
+    }
+}
+@include media-breakpoint-down(md){
+    .aboutUs {
+        .aboutUs__content{
+            @include flex(column);
+            .content__img{
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            .content__desc{
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+    }
+}

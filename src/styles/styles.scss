@@ -5,12 +5,15 @@
 @import "~slick-carousel/slick/slick-theme.css";
 
 @import "./components/Cart.scss";
-@import "./layouts/Header";
-@import './layouts/Banner';
-@import './layouts/Voucher';
-@import './layouts/Images';
-@import './layouts/SliderQuote';
-@import './layouts/SliderProduct';
-@import './layouts/SocialList';
-@import './layouts/AboutMe';
-@import './layouts/Footer';
+@import "./components/Header";
+@import './components/Footer';
+@import './pages/HomePage/Banner';
+@import './pages/HomePage/Voucher';
+@import './pages/HomePage/Images';
+@import './pages/HomePage/SliderQuote';
+@import './pages/HomePage/SliderProduct';
+@import './pages/HomePage/SocialList';
+@import './pages/HomePage/AboutMe';
+
+@import './pages/About/AboutLink.scss';
+@import './pages/About/AboutUs.scss';
