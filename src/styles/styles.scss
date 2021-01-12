@@ -15,5 +15,7 @@
 @import './pages/HomePage/SocialList';
 @import './pages/HomePage/AboutMe';
 
-@import './pages/About/AboutLink.scss';
-@import './pages/About/AboutUs.scss';
+@import './components/LinkBar';
+@import './pages/About/AboutUs';
+
+@import './pages/Contact/ContactContent.scss';
